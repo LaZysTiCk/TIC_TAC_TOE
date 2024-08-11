@@ -1,0 +1,97 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffeef2; /* Lightest shade of pink */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #4a4a4a; /* Darker gray for text */
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #ff99aa; /* Darker pastel pink for the header */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffccd5; /* Light pink */
+    border: 2px solid #ff99aa; /* Darker pastel pink for the border */
+    cursor: pointer;
+    outline: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    position: relative;
+}
+
+.box img {
+    width: 80px;  /* Adjust as necessary */
+    height: 80px; /* Adjust as necessary */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.box:hover {
+    transform: scale(1.1);
+    background-color: #ffb3c6; /* Darker pastel pink on hover */
+}
+
+.box:disabled {
+    cursor: not-allowed;
+    background-color: rgba(255, 204, 213, 0.7); /* Semi-transparent light pink */
+}
+
+#reset-btn, #new-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #ff99aa;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+#reset-btn:hover, #new-btn:hover {
+    background-color: #ff8095; /* Darker pink on hover */
+}
+
+.msg-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffccd5; /* Light pink background for message */
+    color: #4a4a4a; /* Darker gray for message text */
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.msg-container.hide {
+    display: none;
+}
+
+#msg {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
